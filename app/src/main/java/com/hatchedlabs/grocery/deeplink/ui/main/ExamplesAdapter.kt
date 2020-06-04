@@ -1,5 +1,6 @@
 package com.hatchedlabs.grocery.deeplink.ui.main
 
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
@@ -15,6 +16,7 @@ class ExamplesAdapter(val listener: OnExampleClickListener) : RecyclerView.Adapt
         examples.clear()
         examples.addAll(list)
         notifyDataSetChanged()
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExampleViewHolder {
@@ -29,6 +31,7 @@ class ExamplesAdapter(val listener: OnExampleClickListener) : RecyclerView.Adapt
         val linkExample = examples[position]
         holder.itemView.example_title.text = linkExample.title
         holder.itemView.example_link.text = linkExample.url
+        Log.d("linkXXX", "url: ${linkExample.url}")
         holder.itemView.setOnClickListener {
             listener.onExampleClick(linkExample)
         }
