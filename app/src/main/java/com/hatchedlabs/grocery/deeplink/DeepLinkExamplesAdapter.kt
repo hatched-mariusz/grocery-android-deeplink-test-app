@@ -1,11 +1,10 @@
-package com.hatchedlabs.grocery.deeplink.ui.main
+package com.hatchedlabs.grocery.deeplink
 
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.hatchedlabs.grocery.deeplink.R
 import kotlinx.android.synthetic.main.deep_link_example_item_layout.view.*
 
 class ExamplesAdapter(val listener: OnExampleClickListener) : RecyclerView.Adapter<ExamplesAdapter.ExampleViewHolder>() {
@@ -21,7 +20,9 @@ class ExamplesAdapter(val listener: OnExampleClickListener) : RecyclerView.Adapt
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExampleViewHolder {
         val view = LinearLayout.inflate(parent.context, R.layout.deep_link_example_item_layout, null)
-        return ExampleViewHolder(view)
+        return ExampleViewHolder(
+            view
+        )
     }
 
     override fun getItemCount(): Int = examples.size

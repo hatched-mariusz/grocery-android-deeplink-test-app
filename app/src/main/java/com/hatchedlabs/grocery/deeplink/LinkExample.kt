@@ -1,3 +1,3 @@
-package com.hatchedlabs.grocery.deeplink.ui.main
+package com.hatchedlabs.grocery.deeplink
 
 data class LinkExample(val title: String, val url: String)

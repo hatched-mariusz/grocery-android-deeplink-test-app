@@ -1,4 +1,4 @@
-package com.hatchedlabs.grocery.deeplink.ui.main
+package com.hatchedlabs.grocery.deeplink
 
 import androidx.lifecycle.ViewModel
 
