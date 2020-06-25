@@ -13,30 +13,30 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hatchedlabs.grocery.deeplink.R
-import kotlinx.android.synthetic.main.main_fragment.*
+import kotlinx.android.synthetic.main.deep_link_test_fragment.*
 
-class MainFragment : Fragment(), OnExampleClickListener {
+class DeepLinkTestFragment : Fragment(), OnExampleClickListener {
 
     companion object {
-        fun newInstance() = MainFragment()
+        fun newInstance() = DeepLinkTestFragment()
         const val SCHEMA_PROD = "gianteaglegrocery" // or for staging "staginggianteaglegrocery"
         const val HOST_PROD = "gianteaglegrocery.page.link" // or for staging "hatched.page.link"
         const val SCHEMA_STAGING = "staginggianteaglegrocery" // or for staging "staginggianteaglegrocery"
         const val HOST_STAGING = "hatched.page.link" // or for staging "hatched.page.link"
     }
     
-    private lateinit var viewModel: MainViewModel
+    private lateinit var viewModel: DeepLinkTestViewModel
     val examplesAdapter = ExamplesAdapter(this)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.main_fragment, container, false)
+        return inflater.inflate(R.layout.deep_link_test_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(DeepLinkTestViewModel::class.java)
         examples_list.layoutManager = LinearLayoutManager(context)
         examples_list.layoutAnimation =
             AnimationUtils.loadLayoutAnimation(context, R.anim.layout_animation_fall_down)

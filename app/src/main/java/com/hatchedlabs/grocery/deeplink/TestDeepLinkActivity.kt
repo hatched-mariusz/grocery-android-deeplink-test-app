@@ -2,16 +2,16 @@ package com.hatchedlabs.grocery.deeplink
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.hatchedlabs.grocery.deeplink.ui.main.MainFragment
+import com.hatchedlabs.grocery.deeplink.ui.main.DeepLinkTestFragment
 
-class MainActivity : AppCompatActivity() {
+class TestDeepLinkActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_activity)
+        setContentView(R.layout.test_deep_link_activity)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, MainFragment.newInstance())
+                .replace(R.id.container, DeepLinkTestFragment.newInstance())
                 .commitNow()
         }
 
